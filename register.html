@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101b40">
+    <meta name="description" content="创建知问 AI 助教答疑平台学习账号。">
+    <title>注册 · 知问 AI 助教</title>
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body data-page="register">
+    <main class="auth-shell">
+      <aside class="story-panel" aria-label="平台介绍">
+        <a class="brand brand-light" href="index.html" aria-label="知问 AI 助教首页">
+          <span class="brand-mark" aria-hidden="true">知</span>
+          <span>知问 <strong>AI</strong></span>
+        </a>
+        <div class="story-content">
+          <span class="eyebrow">一段属于你的学习旅程</span>
+          <h1>从你的兴趣出发，<br>把不懂变成懂。</h1>
+          <p>告诉我们你正在学习什么，准备好提出第一个问题。</p>
+          <div class="story-note" aria-hidden="true">
+            <span class="note-label">提问示例</span>
+            <span class="note-question">为什么 PWM 的占空比会影响 LED 亮度？</span>
+            <span class="note-answer">试着从一个周期中“亮着的时间”想起。</span>
+          </div>
+        </div>
+        <p class="story-footer">从提问开始，慢慢学会独立解题。</p>
+      </aside>
+
+      <section class="form-panel" aria-labelledby="form-title">
+        <div class="mobile-brand">
+          <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">知</span><span>知问 <strong>AI</strong></span></a>
+        </div>
+        <div class="form-card register-card">
+          <p class="section-kicker">开始学习</p>
+          <h2 id="form-title">创建学习账号</h2>
+          <p class="form-intro">填写基本信息，设置适合自己的学习方向。</p>
+
+          <form id="register-form" method="post">
+            <div class="field-grid">
+              <div class="field">
+                <label for="display-name">怎么称呼你</label>
+                <input id="display-name" name="displayName" type="text" autocomplete="nickname" placeholder="例如：小叶" minlength="2" maxlength="20" required>
+              </div>
+              <div class="field">
+                <label for="study-stage">学习阶段</label>
+                <select id="study-stage" name="stage" required>
+                  <option value="" selected disabled>请选择</option>
+                  <option value="高中">高中</option>
+                  <option value="大学">大学</option>
+                  <option value="自学">自主学习</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="register-email">邮箱地址</label>
+              <input id="register-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" maxlength="100" required>
+            </div>
+            <div class="field">
+              <label for="study-topic">当前学习方向 <span class="optional">选填</span></label>
+              <input id="study-topic" name="topic" type="text" list="study-topics" placeholder="例如：嵌入式开发" maxlength="30">
+              <datalist id="study-topics">
+                <option value="嵌入式开发"></option>
+                <option value="程序设计"></option>
+                <option value="高等数学"></option>
+                <option value="英语学习"></option>
+              </datalist>
+            </div>
+            <div class="field">
+              <label for="register-password">设置密码</label>
+              <div class="password-wrap">
+                <input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="至少 8 位，包含字母和数字" minlength="8" maxlength="20" aria-describedby="password-help" required>
+                <button class="reveal" type="button" data-toggle-password="register-password" aria-label="显示密码" aria-pressed="false">显示</button>
+              </div>
+              <div class="strength-line"><span id="password-help">8–20 位，至少包含一个字母和一个数字</span><meter id="password-strength" min="0" max="4" value="0" aria-label="密码强度"></meter></div>
+            </div>
+            <div class="field">
+              <label for="confirm-password">确认密码</label>
+              <div class="password-wrap">
+                <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" placeholder="再次输入密码" minlength="8" maxlength="20" required>
+                <button class="reveal" type="button" data-toggle-password="confirm-password" aria-label="显示密码" aria-pressed="false">显示</button>
+              </div>
+            </div>
+            <label class="checkbox-line terms-line"><input id="terms" name="terms" type="checkbox" required> <span>我了解这是课程演示页面，提交信息不会创建真实账号</span></label>
+            <button class="primary-button" type="submit">创建账号 <span aria-hidden="true">→</span></button>
+          </form>
+
+          <p class="switch-link">已有账号？<a href="index.html">返回登录</a></p>
+        </div>
+        <p class="panel-footer">© 2026 知问 AI · 学习，从好奇开始</p>
+      </section>
+    </main>
+
+    <dialog id="feedback-dialog" class="feedback-dialog" aria-labelledby="feedback-title">
+      <div class="dialog-symbol" aria-hidden="true">✓</div>
+      <h2 id="feedback-title">表单已通过校验</h2>
+      <p id="feedback-message"></p>
+      <form method="dialog"><button class="primary-button" type="submit">我知道了</button></form>
+    </dialog>
+  </body>
+</html>

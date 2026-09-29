@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101b40">
+    <meta name="description" content="知问 AI 助教答疑平台的登录页面。">
+    <title>登录 · 知问 AI 助教</title>
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body data-page="login">
+    <main class="auth-shell">
+      <aside class="story-panel" aria-label="平台介绍">
+        <a class="brand brand-light" href="index.html" aria-label="知问 AI 助教首页">
+          <span class="brand-mark" aria-hidden="true">知</span>
+          <span>知问 <strong>AI</strong></span>
+        </a>
+        <div class="story-content">
+          <span class="eyebrow">你的随身学习伙伴</span>
+          <h1>每一个好问题，<br>都有继续探索的答案。</h1>
+          <p>记录你的学习方向，让答疑从你正在学的内容开始。</p>
+          <div class="story-note" aria-hidden="true">
+            <span class="note-label">学习提示</span>
+            <span class="note-question">定时器的预分频器有什么作用？</span>
+            <span class="note-answer">先想一想：计数器每加 1 的节奏由谁决定？</span>
+          </div>
+        </div>
+        <p class="story-footer">从提问开始，慢慢学会独立解题。</p>
+      </aside>
+
+      <section class="form-panel" aria-labelledby="form-title">
+        <div class="mobile-brand">
+          <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">知</span><span>知问 <strong>AI</strong></span></a>
+        </div>
+        <div class="form-card">
+          <p class="section-kicker">欢迎回来</p>
+          <h2 id="form-title">登录账号</h2>
+          <p class="form-intro">继续你的学习，回到上次提出的问题。</p>
+
+          <form id="login-form" method="post">
+            <div class="field">
+              <label for="login-email">邮箱地址</label>
+              <input id="login-email" name="email" type="email" inputmode="email" autocomplete="username" placeholder="name@example.com" maxlength="100" required>
+            </div>
+            <div class="field">
+              <label for="login-password">密码</label>
+              <div class="password-wrap">
+                <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="输入你的密码" minlength="8" required>
+                <button class="reveal" type="button" data-toggle-password="login-password" aria-label="显示密码" aria-pressed="false">显示</button>
+              </div>
+            </div>
+            <div class="form-row">
+              <label class="checkbox-line"><input name="remember" type="checkbox"> <span>记住邮箱</span></label>
+              <span class="quiet-hint">演示页面</span>
+            </div>
+            <button class="primary-button" type="submit">登录账号 <span aria-hidden="true">→</span></button>
+          </form>
+
+          <p class="switch-link">还没有账号？<a href="register.html">创建学习账号</a></p>
+          <p class="demo-caption">此页面展示表单交互，尚未连接账号服务。</p>
+        </div>
+        <p class="panel-footer">© 2026 知问 AI · 学习，从好奇开始</p>
+      </section>
+    </main>
+
+    <dialog id="feedback-dialog" class="feedback-dialog" aria-labelledby="feedback-title">
+      <div class="dialog-symbol" aria-hidden="true">✓</div>
+      <h2 id="feedback-title">表单已通过校验</h2>
+      <p id="feedback-message"></p>
+      <form method="dialog"><button class="primary-button" type="submit">我知道了</button></form>
+    </dialog>
+  </body>
+</html>
